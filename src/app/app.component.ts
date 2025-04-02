@@ -41,14 +41,27 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+   
     setTimeout(() => {
       if (this.amplifyAuthenticator) {
-        this.amplifyAuthenticator.signInTitle = 'Login';
-        this.amplifyAuthenticator.signUpTitle = 'Criar Conta';
-        console.log('Sign-in and Sign-up titles updated', this.amplifyAuthenticator.signUpTitle);
-      } else {
-        console.error('Amplify Authenticator is not initialized');
-      }
+        // Atualiza os títulos dos botões
+        const btnLogar = document.getElementsByTagName('button')[0];
+        btnLogar.innerText = 'Logar';
+
+        const btnCriarConta = document.getElementsByTagName('button')[1];
+        btnCriarConta.innerText = 'Criar Conta';
+
+        document.getElementsByTagName('button')[3].innerText = 'Entrar';  
+        document.getElementsByTagName('button')[4].innerText = 'Esqueci minha senha';  
+        
+        btnLogar.onclick = () => {      
+          document.getElementsByTagName('button')[3].innerText = 'Entrar';  
+          document.getElementsByTagName('button')[4].innerText = 'Esqueci minha senha';      
+        }
+        btnCriarConta.onclick = () => {      
+          document.getElementsByTagName('button')[4].innerText = 'Criar Conta';  
+        } 
+      } 
     }, 500);
   }
 }
