@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-monitoramento',
   standalone: true,
-  imports: [],
+  imports: [MatCardModule],
+  styleUrls: ['./monitoramento.component.css'],
   templateUrl: './monitoramento.component.html',
-  styleUrl: './monitoramento.component.css'
 })
 export class MonitoramentoComponent {
 
