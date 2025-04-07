@@ -1,10 +1,16 @@
 import { Routes } from '@angular/router';
-import { TodosComponent } from './todos/todos.component';
+import { MonitoramentoComponent } from './monitoramento/monitoramento.component';
+import { HistoricoComponent } from './historico/historico.component';
 
 
 export const routes: Routes = [
     {
-        path: 'todos', // Define the path as needed
-        component: TodosComponent,
+        path: '', 
+        component: MonitoramentoComponent,
+    },
+    {
+        path: 'historico',
+        component: HistoricoComponent,
     }
+   
 ];

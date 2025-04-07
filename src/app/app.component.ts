@@ -1,6 +1,4 @@
 import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, ViewChildren } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { TodosComponent } from './todos/todos.component';
 
 import { Amplify } from 'aws-amplify';
 import outputs from '../../amplify_outputs.json';
@@ -55,7 +53,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       if (this.amplifyAuthenticator) {
         // Atualiza os títulos dos botões
         const btnLogar = document.getElementsByTagName('button')[0];
-        btnLogar.innerText = 'Logar';
+        if(btnLogar.textContent == ' Sign In ') btnLogar.innerText = 'Logar';
 
         const btnCriarConta = document.getElementsByTagName('button')[1];
         btnCriarConta.innerText = 'Criar Conta';

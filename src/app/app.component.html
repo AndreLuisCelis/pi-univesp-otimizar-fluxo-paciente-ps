@@ -4,7 +4,9 @@
       let-user="user"
       let-signOut="signOut"
     >
-      <app-home (sair)="sair()"></app-home>
+      <app-home 
+      [user]="user"
+      (sair)="sair()"></app-home>
     </ng-template>
     <ng-template amplifySlot="">
         <h1>Meu App</h1>
