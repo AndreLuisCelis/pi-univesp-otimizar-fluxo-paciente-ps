@@ -1,11 +1,13 @@
 import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, ViewChildren } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TodosComponent } from './todos/todos.component';
+
 import { Amplify } from 'aws-amplify';
 import outputs from '../../amplify_outputs.json';
 import { I18n } from '@aws-amplify/core';
 import { AmplifyAuthenticatorModule, AuthenticatorComponent, AuthenticatorService } from '@aws-amplify/ui-angular';
 import { translations } from '@aws-amplify/ui-angular';
+import { HomeComponent } from './home/home.component';
 
 I18n.setLanguage('pt'); // Define o idioma para português
 
@@ -24,7 +26,7 @@ translations['pt'] = {
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA], // Adicione esta linha
-  imports: [RouterOutlet, TodosComponent, AmplifyAuthenticatorModule],
+  imports: [HomeComponent, AmplifyAuthenticatorModule],
 })
 export class AppComponent implements OnInit, AfterViewInit {
   title = 'amplify-angular-template';
@@ -41,7 +43,14 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-   
+    this.traduzirBtns();
+  }
+  sair() {
+    this.authenticator.signOut();
+    this.traduzirBtns();
+  } 
+
+  traduzirBtns() {
     setTimeout(() => {
       if (this.amplifyAuthenticator) {
         // Atualiza os títulos dos botões
