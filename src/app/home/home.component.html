@@ -7,11 +7,11 @@
     <mat-nav-list>
       <a mat-list-item routerLink="">Monitoramento</a>
       <a mat-list-item routerLink="historico">Histórico</a>
-      <a mat-list-item (click)="exit()">Sair</a>
+      <a mat-list-item (click)="exit()" style="margin-top: 65vh;">Sair</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar style="background-color: hsl(190, 95%, 30%);color: #fff;">
       @if (isHandset$ | async) {
         <button
           type="button"

@@ -1,1 +1,41 @@
-<p>historico works!</p>
+<div class="historico">
+    <h1>Histórico</h1>
+    <div *ngFor="let item of data">
+        <table mat-table [dataSource]="item.dataSource" class="mat-elevation-z8" style="margin-bottom: 20px;">
+
+            <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="item-description">
+                <th mat-header-cell *matHeaderCellDef colspan="4" style="font-size: large;">{{item.tipo}} </th>
+            </ng-container>
+
+            <ng-container matColumnDef="tipoAtendimento">
+                <th mat-header-cell *matHeaderCellDef> Tipo de Atendimento</th>
+                <td mat-cell *matCellDef="let element"> {{element.tipoAtendimento}} </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="totalAtendimentos">
+                <th mat-header-cell *matHeaderCellDef> Total de Atendimentos </th>
+                <td mat-cell *matCellDef="let element"> {{element.totalAtendimentos}} </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="tempoMedioEspera">
+                <th mat-header-cell *matHeaderCellDef> Tempo Medio de Espera </th>
+                <td mat-cell *matCellDef="let element"> {{element.tempoMedioEspera}} </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="tempoMedioAtendimento">
+                <th mat-header-cell *matHeaderCellDef> Tempo Medio do Atendiemento </th>
+                <td mat-cell *matCellDef="let element"> {{element.tempoMedioAtendimento}} </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="['item-description']"></tr>
+            <tr mat-header-row *matHeaderRowDef="item.displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: item.displayedColumns;"></tr>
+        </table>
+    </div>
+</div>
