@@ -15,3 +15,9 @@
   top: 0;
   z-index: 1;
 }
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;            
+}

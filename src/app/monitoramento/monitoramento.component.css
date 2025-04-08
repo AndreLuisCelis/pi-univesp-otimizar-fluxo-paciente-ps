@@ -3,6 +3,15 @@
     margin: 10px;
     border: 1px solid #ccc;
     border-radius: 10px;
+    height: 85vh;
+}
+.monitoramento h1 {
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid;
 }
 .painel {
     display: flex;
@@ -12,23 +21,27 @@
 }
 .card-info {
     width: 320px;
+    border: 1px solid #ccc;
+}
+.card-info mat-card-title {
+    border-bottom: 2px solid;
 }
 .borda-sinalizacao-normal {
     height: 100%;
     border-radius: inherit;
-    box-shadow: 2px 2px 5px #1ee635;  
+    box-shadow: 1px 1px 10px #1ee635;  
 }
 
 .borda-sinalizacao-alerta {
     height: 100%;
     border-radius: inherit;
-    box-shadow: 2px 2px 5px #c9e92e;  
+    box-shadow: 1px 1px 10px #c9e92e;  
 }
 
 .borda-sinalizacao-critica {
     height: 100%;
     border-radius: inherit;
-    box-shadow: 2px 2px 5px #ce4010;  
+    box-shadow: 1px 1px 10px #ce4010;  
 }
 .info-numerica {
     color: #555;

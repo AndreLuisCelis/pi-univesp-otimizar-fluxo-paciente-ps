@@ -21,10 +21,11 @@
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button>
       }
-      <span>
-        <mat-icon aria-hidden="false" fontIcon="account_circle" 
-        style="font-size: 40px; width: 40px; height: 40px; margin-bottom: -15px;"></mat-icon>
-        {{user.signInDetails.loginId}} </span>
+      <span class="ellipsis" style="text-align: end;margin-right: 10px;">
+        {{user.signInDetails.loginId}}
+      </span>
+      <mat-icon aria-hidden="false" fontIcon="account_circle" 
+        style="font-size: 35px; width: 35px; height: 35px; margin-bottom: -10px; margin-right: 30px;overflow: visible;"></mat-icon>
     </mat-toolbar>
     <!-- Add Content Here --> 
      <router-outlet></router-outlet>
