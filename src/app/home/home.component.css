@@ -21,3 +21,22 @@
   text-overflow: ellipsis;
   width: 100%;            
 }
+#icn-account {
+  cursor: pointer;
+  font-size: 35px;
+  width: 35px;
+  height: 35px;
+  margin-bottom: -10px;
+  margin-right: 30px;
+  overflow: visible;
+}
+.link-actived {
+  background-color: hsl(190, 95%, 30%) !important;
+  color: #fff !important;
+}
+
+::ng-deep .link-actived .mat-mdc-list-item-unscoped-content { 
+  font-weight: 600 !important;
+  color: #fff !important;
+}
+

@@ -4,13 +4,13 @@ import { HistoricoComponent } from './historico/historico.component';
 
 
 export const routes: Routes = [
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
     {
-        path: '', 
+        path: 'home',
         component: MonitoramentoComponent,
     },
     {
         path: 'historico',
         component: HistoricoComponent,
-    }
-   
+    },
 ];
